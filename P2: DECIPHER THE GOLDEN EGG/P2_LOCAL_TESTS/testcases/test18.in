@@ -1,0 +1,22 @@
+import java.util.function.Function;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println(new Maker().getIdentityCount());
+  }
+}
+
+class Maker {
+  int f;
+  public Function<Box, Box> getIdentity() {
+    return (((x) -> ((x))));
+  }
+
+  public int getIdentityCount() {
+    boolean f;
+    f = false;
+    return 1;
+  }
+}
+
+class Box { }

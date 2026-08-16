@@ -1,0 +1,27 @@
+import java.util.function.Function;
+class Main {
+  public static void main(String[] args) {
+    System.out.println(new Handler().handleAndCount(new Maker().getIdentity()));
+  }
+}
+
+class Maker {
+  public Function<Box,Box> getIdentity() {
+    return (x) -> x;
+  }
+}
+
+class Handler {
+  public Function<Box,Box> handle(Function<Box,Box> f) {
+    return f;
+  }
+
+  // Accepts a Function, does something (here: returns an int)
+  public int handleAndCount(Function<Box,Box> f) {
+    Function<Box,Box> local;
+    local = f;
+    return 2;
+  }
+}
+
+class Box { }

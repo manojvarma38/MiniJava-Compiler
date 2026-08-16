@@ -1,0 +1,21 @@
+import java.util.function.Function;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println(new Child().exercise((((z) -> z)), 12, new Parent()));
+  }
+}
+
+class Parent {
+  Function<Box,Box> f;
+}
+
+class Child extends Parent {
+  public int exercise(Function<Box,Box> f, int z, Parent k) {
+    f = (((x) -> x));
+    f = (y) -> y;   
+    return 5;
+  }
+}
+
+class Box { }

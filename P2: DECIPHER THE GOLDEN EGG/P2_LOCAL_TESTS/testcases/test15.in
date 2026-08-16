@@ -1,0 +1,17 @@
+class Main {
+    public static void main(String[] args) {
+        System.out.println(new E().run());
+    }
+}
+
+class E {
+    public int run() {
+        return new F().sum(1,2); // F.sum expects 1 parameter in the next class (mismatch)
+    }
+}
+
+class F {
+    public int sum(int x) {
+        return x;
+    }
+}

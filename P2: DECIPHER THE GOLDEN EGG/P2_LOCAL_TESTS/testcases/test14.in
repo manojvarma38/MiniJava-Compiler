@@ -1,0 +1,15 @@
+class Main {
+    public static void main(String[] args) {
+        System.out.println(new Child().getVal());
+    }
+}
+
+class Parent {
+    public int getVal() {
+        return 99;
+    }
+}
+
+class Child extends Parent {
+    // inherits getVal from Parent
+}

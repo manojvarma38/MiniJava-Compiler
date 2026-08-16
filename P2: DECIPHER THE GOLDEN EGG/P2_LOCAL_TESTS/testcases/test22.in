@@ -1,0 +1,23 @@
+
+import java.util.function.Function;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println(new LocalShadowsField().start(1));
+  }
+}
+
+class LocalShadowsField {
+  Function<Box,Box> handler; // field
+
+  public int start(int y) {
+    Function<Box,Box> handler; // local shadows field
+    Function<Integer, Integer> k;
+    handler = (x) -> x;
+    k = (x) -> x + y;
+    handler = (z) -> z;   // assigns to field (explicitly via this)
+    return 2;
+  }
+}
+
+class Box { }

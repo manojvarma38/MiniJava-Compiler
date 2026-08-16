@@ -1,0 +1,28 @@
+import java.util.function.Function;
+class Main {
+  public static void main(String[] args) {
+    System.out.println(new Runner().run());
+  }
+}
+
+class Runner {
+  public int run() {
+    Function<Box,Box> f;
+    f = (z) -> z;                     // lambda assigned to a variable
+    return new Handler().handleAndCount(f); // passed to another class
+  }
+}
+
+class Handler {
+  public Function<Box,Box> handle(Function<Box,Box> f) {
+    return f;
+  }
+
+  public int handleAndCount(Function<Box,Box> f) {
+    Function<Box,Box> g;
+    g = f;
+    return 4;
+  }
+}
+
+class Box { }

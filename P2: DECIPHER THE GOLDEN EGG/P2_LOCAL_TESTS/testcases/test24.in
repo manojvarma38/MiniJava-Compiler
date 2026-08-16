@@ -1,0 +1,19 @@
+import java.util.function.Function;
+class Main {
+  public static void main(String[] args) {
+    System.out.println(new ParamShadowsField().call(7));
+  }
+}
+
+class ParamShadowsField {
+  boolean count; // field
+
+  // parameter 'count' shadows the field 'count' inside the method
+  public int call(int count) {
+    Function<Box,Box> f;
+    f = (b) -> b;
+    return count; // returns the parameter, not the field
+  }
+}
+
+class Box { }

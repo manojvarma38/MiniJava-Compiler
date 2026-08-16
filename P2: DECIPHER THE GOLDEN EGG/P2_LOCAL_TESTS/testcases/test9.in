@@ -1,0 +1,14 @@
+class Main {
+    public static void main(String[] args) {
+        System.out.println(new Tester().run());
+    }
+}
+
+class Tester {
+    public int run() {
+        int[] arr;
+        arr = new int[10];
+        arr[true] = 5; // index must be int
+        return 0;
+    }
+}

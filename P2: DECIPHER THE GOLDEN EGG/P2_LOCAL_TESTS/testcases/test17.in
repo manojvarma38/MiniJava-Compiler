@@ -1,0 +1,30 @@
+import java.util.function.Function;
+
+class what {
+	public static void main(String[] args) {
+		System.out.println(new A().start());
+	}
+}
+
+class A {
+	Function<C, B> x;
+	public int start() {
+		C c;
+		int z;
+		c = new C();
+		x = (z) -> z.get();
+		return (x.apply(c)).ret(1);
+	}
+}
+
+class C {
+	public B get() {
+		return new B();
+	}
+}
+
+class B {
+	public int ret(int x) {
+		return x + 2;
+	}
+}

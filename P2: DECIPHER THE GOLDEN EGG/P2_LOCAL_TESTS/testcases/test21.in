@@ -1,0 +1,30 @@
+import java.util.function.Function;
+class Main {
+  public static void main(String[] args) {
+    System.out.println(((new Combiner()).supply()).handleAndCount(new Maker().getIdentity()));
+  }
+}
+
+class Maker {
+  public Function<Box,Box> getIdentity() {
+    return (((x) -> x));
+  }
+}
+
+class Combiner {
+  public Handler supply() {
+    return new Handler();
+  }
+}
+
+class Handler {
+  public Function<Box,Box> handle(Function<Box,Box> f) {
+    return f;
+  }
+
+  public int handleAndCount(Function<Box,Box> f) {
+    return 5;
+  }
+}
+
+class Box { }

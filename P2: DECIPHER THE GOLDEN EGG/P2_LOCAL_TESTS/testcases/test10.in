@@ -1,0 +1,12 @@
+class Main {
+    public static void main(String[] args) {
+        System.out.println(new A().go());
+    }
+}
+
+class A {
+    public int go() {
+        // 'x' never declared anywhere
+        return x;
+    }
+}

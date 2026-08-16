@@ -1,0 +1,13 @@
+class Main {
+    public static void main(String[] args) {
+        System.out.println(new H().run());
+    }
+}
+
+class H {
+    public int run() {
+        Unknown u;         // Unknown class not declared
+        u = new Unknown(); // allocate missing class
+        return 0;
+    }
+}

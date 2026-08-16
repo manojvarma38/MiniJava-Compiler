@@ -1,0 +1,11 @@
+class Main {
+    public static void main(String[] args) {
+        System.out.println(new D().call());
+    }
+}
+
+class D {
+    public int call() {
+        return true; // returning boolean from int method
+    }
+}
